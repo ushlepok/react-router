@@ -1,6 +1,6 @@
+/* jshint -W058 */
 "use strict";
 
-/* jshint -W058 */
 var React = require("react");
 var warning = require("react/lib/warning");
 var invariant = require("react/lib/invariant");
@@ -337,7 +337,7 @@ function createRouter(options) {
           toRoutes = nextRoutes;
         }
 
-        var transition = new Transition(path, Router.replaceWith.bind(Router, path));
+        var transition = new Transition(path, Router.replaceWith.bind(Router, path), options.transitionContext);
         pendingTransition = transition;
 
         var fromComponents = mountedComponents.slice(prevRoutes.length - fromRoutes.length);
